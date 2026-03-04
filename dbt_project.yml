@@ -35,7 +35,9 @@ models:
     +database: demo_dbt
     staging:
       +materialized: view
+      +schema: stage
     marts:
       +materialized: table
+      +schema: curated
 flags:
   require_generic_test_arguments_property: true
