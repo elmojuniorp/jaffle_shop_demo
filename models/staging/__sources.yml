@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: ecom
+    database: "{{ 'demo_dbt' if target.name in ['prd', 'ci'] else 'demo_dbt_dev' }}"
     schema: raw
     description: E-commerce data for the Jaffle Shop
     tables:
