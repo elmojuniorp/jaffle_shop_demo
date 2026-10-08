@@ -1,5 +1,10 @@
 
--- metricflow_time_spine.sql
+{{
+    config(
+        materialized='table'
+    )
+}}
+
 with 
 
 days as (
@@ -13,7 +18,7 @@ cast_to_date as (
 
     select 
         cast(date_day as date) as date_day,
-        date_trunc('quarter', date_day) as almost_fiscal_quarter
+        date_part('quarter', date_day) as almost_fiscal_quarter
     
     from days
 

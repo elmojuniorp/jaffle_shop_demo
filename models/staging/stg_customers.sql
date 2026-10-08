@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='table',
+        catalog_name='my_horizon_catalog'
+    )
+}}
+
 with
 
 source as (

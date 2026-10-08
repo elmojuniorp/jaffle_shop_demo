@@ -32,12 +32,16 @@ seeds:
 models:
   jaffle_shop:
     # Applies to all files under models/example/
-    +database: demo_dbt
+    +database: DEMO_SHARED_CATALOG
     staging:
-      +materialized: view
+      +materialized: table
+      +catalog_name: my_horizon_catalog
       +schema: stage
     marts:
-      +materialized: table
+      +materialized: dynamic_table
+      +snowflake_warehouse: SHARED_WH
+      +scheduler: disable
+      +catalog_name: my_horizon_catalog
       +schema: curated
 flags:
   require_generic_test_arguments_property: true

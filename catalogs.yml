@@ -1,0 +1,10 @@
+catalogs:
+  - name: my_horizon_catalog
+    type: horizon
+    table_format: iceberg  # optional - default
+    config:
+      snowflake:
+        # optional - specify additional Snowflake-specific configurations
+        change_tracking: true
+        iceberg_version: 3  # available in v1.12+
+        external_volume: S3_DATALAKE_EU

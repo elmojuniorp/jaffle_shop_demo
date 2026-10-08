@@ -1,3 +1,12 @@
+{{
+    config(
+        materialized='dynamic_table',
+        snowflake_warehouse='SHARED_WH',
+        scheduler='disable'
+
+    )
+}}
+
 with
 
 customers as (
